@@ -1,0 +1,83 @@
+RESOURCES:
+http://www.gamasutra.com/blogs/GarretBright/20140422/215978/Build_a_Bad_Guy_Workshop__Designing_enemies_for_retro_games.php
+
+UPCOMING TASK LIST:
+- Custom death animations: ooze straightens and then splooshes down
+- Stalker enemy (hides in light, slowly chases in dark)
+- System for pausing and displaying messages
+- NPCs with dialogue
+- System for tracking/displaying number of torches lit in area
+- System for tracking/displaying number of prisoners released from area
+- Smoke effect?
+- Camera + room system
+    - Camera bounds can be set for each room
+    - Camera scrolls back in bounds incrementally when out of bounds
+- Enemy Push Hitbox?
+    - Hitbox that pushes other characters away
+    - Separate hitboxes for player vs other enemies?
+- Player blinks when invulnerable
+- Load scene system
+- Teleport function
+- Death system
+- Save/load game system
+
+BUGS:
+- Enemy Hitbox knockback doesn't work along x axis
+- Candle only lights based on OnTriggerEnter, not OnTriggerStay
+
+WEEK 1/16/2017
+- Set "Persistent Contents" in rooms to activate the first time you enter
+- Build 1st level
+- Dungeon assets
+    X Jail bars
+    - Door
+    - Wall torch
+    X Water
+    X Waterfall
+
+WEEK 1/9/2017
+X Room system
+    X Disable front wall when inside
+    X Disable everything inside room when room is out of sight (maybe just disable animators?)
+    X Ambient lighting control and control of player's illumination
+    X Set which z layers should have terrain cube colliders enabled
+X Fix Light Chaser behavior: dashes towards player until a certain about of time is up or hits a wall, then looks around, then starts over
+X Enemy Damage Hitbox
+    X Looks for player within trigger collider
+    X Does damage
+    X Knockback
+    X Temporary invulnerability for player
+X Bat enemy
+    X Flies back and forth between fixed positions
+    X Dies in one hit
+    X 1 damage hitbox
+X Build Green Slime enemy
+
+WEEK 1/2/2017
+X Make sprites affected by lighting
+X Light Chaser
+    X Draw
+    X Animate
+    X Chases the player if they are nearby and illuminated, otherwise sleeps
+    X Dies to 1 candle hit
+
+WEEK 12/26/2016
+X Jump stops when you hit your head
+X Flame attack lights torches
+
+WEEK 12/19/2016
+x Health/damage system
+    x Health UI
+    x Player damage/flinch methods and animation
+    x Damage hitbox
+X Light system
+    X Candles and torches have a sphere collider defining the area that is considered "lit"
+    X Player controller knows if it is currently lit or not
+X Fire attack
+    X Needs to update player's illumination
+    X Needs a hitbox to search for enemies and destructible objects
+X Destructible wooden boxes
+    X Art; animate it turning to ash
+    X Fixed x and z position, but not y; affected by gravity
+    X Destroyed by fire attack (need to add hitbox for fire attack)
+    X Add something on box sides that detects fire and changes color and sends box side flying

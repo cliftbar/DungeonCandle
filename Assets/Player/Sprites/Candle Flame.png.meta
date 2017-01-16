@@ -1,0 +1,535 @@
+fileFormatVersion: 2
+guid: b93841c2852bbfc4a9d8b2ff6d83e1e7
+timeCreated: 1482085534
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Candle Flame_0
+    21300002: Candle Flame_1
+    21300004: Candle Flame_2
+    21300006: Candle Flame_3
+    21300008: Candle Flame_4
+    21300010: Candle Flame_5
+    21300012: Candle Flame_6
+    21300014: Candle Flame_7
+    21300016: Candle Flame_8
+    21300018: Candle Flame_9
+    21300020: Candle Flame_10
+    21300022: Candle Flame_11
+    21300024: Candle Flame_12
+    21300026: Candle Flame_13
+    21300028: Candle Flame_14
+    21300030: Candle Flame_15
+    21300032: Candle Flame_16
+    21300034: Candle Flame_17
+    21300036: Candle Flame_18
+    21300038: Candle Flame_19
+    21300040: Candle Flame_20
+    21300042: Candle Flame_21
+    21300044: Candle Flame_22
+    21300046: Candle Flame_23
+    21300048: Candle Flame_24
+    21300050: Candle Flame_25
+    21300052: Candle Flame_26
+    21300054: Candle Flame_27
+    21300056: Candle Flame_28
+    21300058: Candle Flame_29
+    21300060: Candle Flame_30
+    21300062: Candle Flame_31
+    21300064: Candle Flame_32
+    21300066: Candle Flame_33
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Candle Flame_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 210
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_2
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 210
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_3
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 210
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_4
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 210
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 175
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_6
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 175
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_7
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 175
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_8
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 175
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_9
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 175
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 140
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_11
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 140
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_12
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 140
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_13
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 140
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_14
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 140
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 105
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_16
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 105
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_17
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 105
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_18
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 105
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_19
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 105
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 70
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_21
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 70
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_22
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 70
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_23
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 70
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_24
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 70
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_26
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 35
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_27
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 35
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_28
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 35
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_29
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 35
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_31
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 0
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_32
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Candle Flame_33
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 44
+        height: 35
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
