@@ -9,9 +9,6 @@ UPCOMING TASK LIST:
 - System for tracking/displaying number of torches lit in area
 - System for tracking/displaying number of prisoners released from area
 - Smoke effect?
-- Camera + room system
-    - Camera bounds can be set for each room
-    - Camera scrolls back in bounds incrementally when out of bounds
 - Enemy Push Hitbox?
     - Hitbox that pushes other characters away
     - Separate hitboxes for player vs other enemies?
@@ -26,7 +23,10 @@ BUGS:
 - Candle only lights based on OnTriggerEnter, not OnTriggerStay
 
 WEEK 1/16/2017
-- Set "Persistent Contents" in rooms to activate the first time you enter
+X Set "Persistent Contents" in rooms to activate the first time you enter
+X Camera + room system
+    X Camera bounds can be set for each room
+    X Camera scrolls back in bounds incrementally when out of bounds
 - Build 1st level
 - Dungeon assets
     X Jail bars
@@ -34,6 +34,7 @@ WEEK 1/16/2017
     - Wall torch
     X Water
     X Waterfall
+X Puff of smoke animation when enemies die
 
 WEEK 1/9/2017
 X Room system

@@ -8,3 +8,13 @@ Candle starts unlit
 3) Player runs past strategically placed unlit torch to teach them about their candle being lit
 4) Slightly harder platforming
 5) Hallway where you light numerous unlit torches
+
+------- LEVEL ? -------
+Environments:
+Cave
+Deep Dungeon
+Armory
+Ground Level
+Courtyard
+Moat
+Tower

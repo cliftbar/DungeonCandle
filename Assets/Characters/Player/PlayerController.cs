@@ -52,6 +52,9 @@ public class PlayerController : MonoBehaviour {
 	private bool roomLit = false;
 	public int illumCount;
 
+    // Count of rooms player currently occupies:
+    public int roomCount;
+
 	void Awake () {
 		rb = GetComponent<Rigidbody>();
 		sr = GetComponent<SpriteRenderer>();
