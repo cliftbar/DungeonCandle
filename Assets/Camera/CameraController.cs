@@ -27,13 +27,13 @@ public class CameraController : MonoBehaviour {
         Vector3 target;
 
         if (transform.position.x < cameraMin.x) {
-            target.x = Mathf.Min(transform.position.x + 0.2f, cameraMin.x);
+            target.x = Mathf.Min(transform.position.x + 0.4f, cameraMin.x);
         } else if (transform.position.x > cameraMax.x) {
-            target.x = Mathf.Max(transform.position.x - 0.2f, cameraMax.x);
+            target.x = Mathf.Max(transform.position.x - 0.4f, cameraMax.x);
         } else if (transform.position.x < center.x - cameraPlayerBound.x && center.x - cameraPlayerBound.x < cameraMax.x) {
-            target.x = Mathf.Min(transform.position.x + 0.2f, center.x - cameraPlayerBound.x);
+            target.x = Mathf.Min(transform.position.x + 0.4f, center.x - cameraPlayerBound.x);
         } else if (transform.position.x > center.x + cameraPlayerBound.x && center.x + cameraPlayerBound.x > cameraMin.x) {
-            target.x = Mathf.Max(transform.position.x - 0.2f, center.x + cameraPlayerBound.x);
+            target.x = Mathf.Max(transform.position.x - 0.4f, center.x + cameraPlayerBound.x);
         } else {
             target.x = transform.position.x;
         }

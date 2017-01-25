@@ -68,7 +68,7 @@ public class LightChaseEnemy : MonoBehaviour {
 			} else if (state == 2) {
 				if (AggroTriggered() == false) {
 					StartSleep();
-				} else if (Time.time >= chargeTimestamp + chargeTime || td.detected == true) {
+				} else if (Time.time >= chargeTimestamp + chargeTime || td.Detected() == true) {
 					StopCharge();
 				}
 			} else if (state == 3 && Time.time >= stopTimestamp + stopTime) {

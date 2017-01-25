@@ -1,39 +1,62 @@
 RESOURCES:
 http://www.gamasutra.com/blogs/GarretBright/20140422/215978/Build_a_Bad_Guy_Workshop__Designing_enemies_for_retro_games.php
 
-UPCOMING TASK LIST:
-- Custom death animations: ooze straightens and then splooshes down
+FEATURES:
 - Stalker enemy (hides in light, slowly chases in dark)
 - System for pausing and displaying messages
 - NPCs with dialogue
 - System for tracking/displaying number of torches lit in area
-- System for tracking/displaying number of prisoners released from area
-- Smoke effect?
 - Enemy Push Hitbox?
     - Hitbox that pushes other characters away
     - Separate hitboxes for player vs other enemies?
-- Player blinks when invulnerable
 - Load scene system
 - Teleport function
-- Death system
-- Save/load game system
-
-BUGS:
-- Enemy Hitbox knockback doesn't work along x axis
-- Candle only lights based on OnTriggerEnter, not OnTriggerStay
-
-WEEK 1/16/2017
-X Set "Persistent Contents" in rooms to activate the first time you enter
-X Camera + room system
-    X Camera bounds can be set for each room
-    X Camera scrolls back in bounds incrementally when out of bounds
-- Build 1st level
 - Dungeon assets
     X Jail bars
     - Door
     - Wall torch
     X Water
     X Waterfall
+
+IMPROVEMENTS:
+- Custom death animations: ooze straightens and then splooshes down, or is blown to bits by fire attack
+- Fix bat death fading animation to work with smoke-puff death animation
+- Smoke effect for torches?
+- Player blinks when invulnerable after getting hit
+
+BUGS:
+- Enemy Hitbox knockback doesn't work along x axis
+- Candle only lights based on OnTriggerEnter, not OnTriggerStay
+
+
+Week 1/23/2017
+X Data Persistent Class
+    X Persists between scenes
+    X Keeps track of player's starting position
+    X Keeps track of which beacons are lit
+    X Keeps track of what beacon doors are open
+    X Keeps track of which bosses have been defeated (and therefore sets player life)
+    X Keeps track of miscellaneous switches
+- Main Menu
+    - New Game Option
+    - Load Game Option
+- Beacons
+    - Uses data persistence object to know whether to start lit or not
+    - Once lit, updates the data persistence object
+- Death System
+    - Uses start position from Data Persistence class to respawn player when he dies
+    - Some kind of death animation
+- Add FallingDeath script and prefab
+    - Freezes camera
+- Saver/Loader Object
+    X Persists between scenes
+    - Saves/loads data persistence object
+
+WEEK 1/16/2017
+X Set "Persistent Contents" in rooms to activate the first time you enter
+X Camera + room system
+    X Camera bounds can be set for each room
+    X Camera scrolls back in bounds incrementally when out of bounds
 X Puff of smoke animation when enemies die
 
 WEEK 1/9/2017

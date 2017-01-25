@@ -1,7 +1,7 @@
-------- LEVEL 1 -------
+------- DUNGEON -------
 Dungeon environment
-Connects to: Sewers, Deep Dungeon, Armory
-Candle starts unlit
+Exits
+
 
 1) Player moves through bright room, easy platforming
 2) Player moves through dark room, introduce Green Slime as light source and enemy to avoid
@@ -10,11 +10,11 @@ Candle starts unlit
 5) Hallway where you light numerous unlit torches
 
 ------- LEVEL ? -------
-Environments:
-Cave
+
+
+
+------- LEVEL ? -------
+
+
+
 Deep Dungeon
-Armory
-Ground Level
-Courtyard
-Moat
-Tower

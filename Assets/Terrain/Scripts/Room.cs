@@ -10,7 +10,8 @@ public class Room : MonoBehaviour {
     private CameraController cameraController;
     private PlayerController pc;
 
-    private bool occupied = false;
+    // Variables for keeping track of whether the room is occupied or not:
+    private int occupied = 0; // keeps track of how many of the room's colliders are currently occupied
     private bool onlyRoomOccupied = false;
     private float enterTimestamp = -1f;
 
@@ -58,7 +59,7 @@ public class Room : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        if (occupied == true && onlyRoomOccupied == false && pc.roomCount == 1) {
+        if (occupied >= 1 && onlyRoomOccupied == false && pc.roomCount == 1) {
             FinishEntering();
         }
         if (onlyRoomOccupied == true) {
@@ -84,14 +85,17 @@ public class Room : MonoBehaviour {
     }
 
     void StartEntering () {
-        occupied = true;
-        pc.roomCount += 1;
-
         if (enterTimestamp < 0f) {
             EnablePersistentContents(true);
         }
-        EnableWall(false);
-        EnableContents(true);
+
+        if (occupied == 0) {
+            pc.roomCount += 1;
+            EnableWall(false);
+            EnableContents(true);
+        }
+
+        occupied += 1;
     }
 
     void FinishEntering () {
@@ -106,13 +110,16 @@ public class Room : MonoBehaviour {
 
     void OnTriggerExit (Collider other) {
         if (other.gameObject.name == "Player") {
-            occupied = false;
-            onlyRoomOccupied = false;
+            occupied -= 1;
 
-            pc.roomCount -= 1;
+            if (occupied == 0) {
+                onlyRoomOccupied = false;
 
-            EnableWall(true);
-            EnableContents(false);           
+                pc.roomCount -= 1;
+
+                EnableWall(true);
+                EnableContents(false);
+               }
         }
     }
 
