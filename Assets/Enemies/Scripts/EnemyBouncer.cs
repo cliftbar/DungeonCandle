@@ -6,12 +6,15 @@ using UnityEngine;
 public class EnemyBouncer : MonoBehaviour {
 
     private Rigidbody rb = null;
-    private int framesLeft;
+    private int framesLeft = 0;
+    private float lastTime = 0.0f;
+    private float thisTime = 0.0f;
 
     // public and uninitialized for Unity
     public float speed;
     public int MovementFrames;
     public int bounceForce;
+    public int movementTime;
 
     // Use this for initialization
     void Start () {
@@ -19,16 +22,21 @@ public class EnemyBouncer : MonoBehaviour {
         rb.velocity = new Vector3(speed * -1f, 0f, 0f);
 
         framesLeft = MovementFrames;
+
+        lastTime = Time.time;
     }
     
     // Update is called once per frame
     void Update () {
-        if (framesLeft == 0) {
+        thisTime = Time.time;
+        TurnCheck();
+    }
+
+    void TurnCheck() {
+        if (lastTime + movementTime < Time.time) {
             turnAround();
             Bounce();
-            framesLeft = MovementFrames;
-        } else {
-            --framesLeft;
+            lastTime = Time.time;
         }
     }
 
