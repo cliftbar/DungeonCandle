@@ -52,6 +52,9 @@ public class PlayerController : MonoBehaviour {
 	private bool roomLit = false;
 	public int illumCount;
 
+    // Count of rooms player currently occupies:
+    public int roomCount;
+
 	void Awake () {
 		rb = GetComponent<Rigidbody>();
 		sr = GetComponent<SpriteRenderer>();
@@ -96,7 +99,7 @@ public class PlayerController : MonoBehaviour {
 		// Movement physics:
 		if (Mathf.Abs(moveInput) >= 0.2) {
 			Move();
-		} else if (gd.detected == true) {
+		} else if (gd.Detected() == true) {
 			ApplyFriction(friction);
 		}
 
@@ -124,7 +127,7 @@ public class PlayerController : MonoBehaviour {
 
 		// Flinch processing:
 		if (flinching == true) {
-			if (Time.time > flinchTimestamp + flinchTime || (Time.time > flinchTimestamp + flinchTime / 2f && gd.detected == true)) {
+			if (Time.time > flinchTimestamp + flinchTime || (Time.time > flinchTimestamp + flinchTime / 2f && gd.Detected() == true)) {
 				StopFlinch();
 			}
 		}
@@ -143,7 +146,7 @@ public class PlayerController : MonoBehaviour {
 			GetCandleInput();
 		}
 
-		if (gd.detected == true || jumping == true) {
+		if (gd.Detected() == true || jumping == true) {
 			GetJumpInput();
 		}
 
@@ -157,7 +160,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void GetJumpInput () {
-		if (Input.GetButtonDown("Jump") && jumping == false && gd.detected == true) {
+		if (Input.GetButtonDown("Jump") && jumping == false && gd.Detected() == true) {
 			StartJump();
 		}
 
@@ -177,7 +180,7 @@ public class PlayerController : MonoBehaviour {
 	void Move () {
 		if ((-1f * maxSpeed < rb.velocity.x && moveInput < 0) || (rb.velocity.x < maxSpeed && moveInput > 0)) {
 			anim.SetBool("moving", true);
-			if (gd.detected == true) {
+			if (gd.Detected() == true) {
 				rb.AddForce(moveInput * accel, 0f, 0f);
 			} else {
 				rb.AddForce(moveInput * airAccel, 0f, 0f);
@@ -210,7 +213,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void ContinueJump () {
-		if (cd.detected == true) {
+		if (cd.Detected() == true) {
 			jumping = false;
 			rb.velocity = new Vector3 (rb.velocity.x, rb.velocity.y * -0.1f, 0f);
 		} else {
@@ -270,7 +273,7 @@ public class PlayerController : MonoBehaviour {
 		attackEnabled = true;
 	}
 
-	void PutCandleOut () {
+	public void PutCandleOut () {
 		candleLit = false;
 		srCandle.enabled = false;
 
@@ -295,7 +298,7 @@ public class PlayerController : MonoBehaviour {
 	//-----------//
 
 	void UpdateAnimation () {
-		anim.SetBool("grounded", gd.detected);
+		anim.SetBool("grounded", gd.Detected());
 
 		if (sr.flipX == false) {
 			anim.SetFloat("velocityX", rb.velocity.x);

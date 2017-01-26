@@ -8,6 +8,7 @@ public class SimplerWalker : MonoBehaviour {
     private TerrainDetector wd;
     private Vitality vt;
 
+    public bool startTurned;
     public float speed;
 
     void Awake () {
@@ -26,9 +27,12 @@ public class SimplerWalker : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        rb.velocity = new Vector3(speed * -1f, 0f, 0f);
+        if (startTurned == true) {
+            TurnAround();
+        }
+        SetSpeed();
     }
-    
+
     // Update is called once per frame
     void Update () {
         
@@ -36,7 +40,8 @@ public class SimplerWalker : MonoBehaviour {
 
     void FixedUpdate () {
         if (vt.currentLife > 0) {
-            if (wd.detected == true || cd.detected == false) {
+            SetSpeed();
+            if (wd.Detected() == true || cd.Detected() == false) {
                 TurnAround();
             }
         } else {
@@ -44,8 +49,15 @@ public class SimplerWalker : MonoBehaviour {
         }
     }
 
+    void SetSpeed () {
+        if (sr.flipX == true) {
+            rb.velocity = new Vector3(speed, 0f, 0f);
+        } else {
+            rb.velocity = new Vector3(speed * -1f, 0f, 0f);
+        }
+    }
+
     void TurnAround () {
-        rb.velocity = new Vector3(rb.velocity.x * -1f, rb.velocity.y, 0f);
         sr.flipX = !sr.flipX;
 
         foreach (Transform child in transform) {
