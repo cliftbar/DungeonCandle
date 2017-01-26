@@ -6,13 +6,11 @@ using UnityEngine;
 public class EnemyBouncer : MonoBehaviour {
 
     private Rigidbody rb = null;
-    private int framesLeft = 0;
     private float lastTime = 0.0f;
     private float thisTime = 0.0f;
 
     // public and uninitialized for Unity
     public float speed;
-    public int MovementFrames;
     public int bounceForce;
     public int movementTime;
 
@@ -21,7 +19,6 @@ public class EnemyBouncer : MonoBehaviour {
         rb = this.GetComponent<Rigidbody>();
         rb.velocity = new Vector3(speed * -1f, 0f, 0f);
 
-        framesLeft = MovementFrames;
 
         lastTime = Time.time;
     }
