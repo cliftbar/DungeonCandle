@@ -51,10 +51,11 @@ public class Room : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-       SetSolidTerrain();
-       EnableWall(true);
-       EnableContents(false);
-       EnablePersistentContents(false);
+
+        SetSolidTerrain();
+        EnableWall(true);
+        EnableContents(false);
+        EnablePersistentContents(false);
     }
     
     // Update is called once per frame

@@ -15,9 +15,12 @@ public class CameraController : MonoBehaviour {
     public Vector2 cameraMin;
     public Vector2 cameraMax;
 
-    // Use this for initialization
-    void Start () {
+    void Awake () {
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
+    }
+
+    public void Initialize () {
+        transform.position = playerTransform.position + new Vector3(0f, cameraHeight, -1 * cameraDepth);
     }
 
     // Update is called once per frame
