@@ -340,7 +340,7 @@ public class PlayerController : MonoBehaviour {
             rb.velocity = new Vector3(0f, 0f, 0f);
 
             if (currentLife == 0) {
-                StartDeath();
+                StartDeath(false);
             } else {
                 StartFlinch(knockback);
             }
@@ -373,9 +373,10 @@ public class PlayerController : MonoBehaviour {
 
     void StopFlinchInvuln () {
         flinchInvuln = false;
+        anim.SetTrigger("endBlink");
     }
 
-    void StartDeath () {
+    public void StartDeath (bool fallingDeath) {
         deathTimestamp = Time.time;
         dying = true;
     }

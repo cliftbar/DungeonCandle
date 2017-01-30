@@ -73,7 +73,9 @@ public class SceneController : MonoBehaviour {
     }
 
     public void SaveCurrentGame () {
-        SaveGame(currentData.slot);
+        if (currentData.slot >= 0) {
+            SaveGame(currentData.slot);
+        }
         Debug.Log(currentData.slot);
     }
 
@@ -169,5 +171,21 @@ public class SceneController : MonoBehaviour {
         currentData.velocityY = velocity.y;
         currentData.velocityZ = velocity.z;
         currentData.flipX = flipX;
+    }
+
+    // ----------------- //
+    // CHECKING PROGRESS //
+    // ----------------- //
+
+    public bool BeaconLit(int beaconId) {
+        return currentData.beaconLit[beaconId];
+    }
+
+    public void LightBeacon(int beaconId) {
+        if (currentData.beaconLit[beaconId] == true) {
+            throw new System.ArgumentException("Beacon for that beaconId was already lit. There may be more than 1 beacon assigned to the same ID.", "beaconId");
+        } else {
+            currentData.beaconLit[beaconId] = true;
+        }
     }
 }

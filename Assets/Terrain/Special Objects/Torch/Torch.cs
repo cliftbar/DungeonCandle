@@ -41,7 +41,7 @@ public class Torch : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider other) {
-		if (other.gameObject.name == "Candle Hitbox") {
+		if (other.gameObject.name == "Candle Flame Hitbox") {
 			if (lit == false && other.transform.parent.GetComponent<PlayerController>().CandleLit() == true) {
 				LightFlame();
 			} else if (lit == true && other.transform.parent.GetComponent<PlayerController>().CandleLit() == false) {

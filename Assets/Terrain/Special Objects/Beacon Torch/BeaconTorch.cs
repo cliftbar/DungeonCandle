@@ -2,57 +2,75 @@
 using System.Collections;
 
 public class BeaconTorch : MonoBehaviour {
-	private Animator anim;
-	private GameObject lightObject;
-	public bool lit;
+    private GameObject scObject;
+    private SceneController sc;
 
-	void Awake () {
-		anim = GetComponent<Animator>();
-		lightObject = GetComponentInChildren<Light>().gameObject;
-	}
+    private Animator anim;
+    private GameObject lightObject;
+    public int id;
+    private bool lit;
 
-	// Use this for initialization
-	void Start () {
-		if (lit == true) {
-			LightFlame();
-		} else {
-			PutOutFlame();
-		}
-	}
+    void Awake () {
+        anim = GetComponent<Animator>();
+        lightObject = GetComponentInChildren<Light>().gameObject;
+    }
 
-	void OnEnable () {
-		Start();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
+    // Use this for initialization
+    void Start () {
+        scObject = GameObject.Find("Scene Controller");
+        if (scObject == null) {
+            lit = false;
+        } else {
+            sc = scObject.GetComponent<SceneController>();
+            if (sc.BeaconLit(id) == true) {
+                lit = true;
+            } else {
+                lit = false;
+            }
+        }
 
-	void LightFlame () {
-		lit = true;
-		anim.SetBool("lit", true);
-		lightObject.SetActive(true);
-	}
+        if (lit == false) {
+            PutOutFlame();
+        }
+    }
 
-	void PutOutFlame () {
-		lit = false;
-		anim.SetBool("lit", false);
-		lightObject.SetActive(false);
-	}
+    void OnEnable () {
+        Start();
+    }
 
-	void OnTriggerEnter (Collider other) {
-		if (other.gameObject.name == "Candle Hitbox") {
-			if (lit == false && other.transform.parent.GetComponent<PlayerController>().CandleLit() == true) {
-				LightFlame();
-			} else if (lit == true && other.transform.parent.GetComponent<PlayerController>().CandleLit() == false) {
-				other.transform.parent.GetComponent<PlayerController>().LightCandle();
-			}
-		}
+    
+    // Update is called once per frame
+    void Update () {
+    }
 
-		if (other.transform.parent != null) {
-			if (other.transform.parent.gameObject.name == "Player Flame Attack" && lit == false) {
-				LightFlame();
-			}
-		}
-	}
+    void LightFlame () {
+        lit = true;
+        anim.SetBool("lit", true);
+        lightObject.SetActive(true);
+
+        sc.LightBeacon(id);
+        sc.SaveCurrentGame();
+    }
+
+    void PutOutFlame () {
+        lit = false;
+        anim.SetBool("lit", false);
+        lightObject.SetActive(false);
+    }
+
+    void OnTriggerEnter (Collider other) {
+        if (other.gameObject.name == "Candle Flame Hitbox") {
+            if (lit == false && other.transform.parent.GetComponent<PlayerController>().CandleLit() == true) {
+                LightFlame();
+            } else if (lit == true && other.transform.parent.GetComponent<PlayerController>().CandleLit() == false) {
+                other.transform.parent.GetComponent<PlayerController>().LightCandle();
+            }
+        }
+
+        if (other.transform.parent != null) {
+            if (other.transform.parent.gameObject.name == "Player Flame Attack" && lit == false) {
+                LightFlame();
+            }
+        }
+    }
 }
