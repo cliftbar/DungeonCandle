@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour {
+    private SceneController sc;
+
     private string currentMenu;
     private int currentOption;
 
@@ -16,7 +18,7 @@ public class MainMenuController : MonoBehaviour {
     public Text[] mainMenuOption;
 
     void Awake () {
-
+        sc = GameObject.Find("Scene Controller").GetComponent<SceneController>();
     }
 
     // Use this for initialization
@@ -119,9 +121,11 @@ public class MainMenuController : MonoBehaviour {
     void ChooseOption () {
         if (currentMenu == "Main Menu") {
             if (currentOption == 0) {
-
+                if (sc.SaveSlotFilled(0)) {
+                    sc.LoadGame(0);
+                }
             } else if (currentOption == 1) {
-
+                sc.NewGame(0);
             } else if (currentOption == 2) {
 
             }

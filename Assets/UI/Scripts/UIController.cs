@@ -18,7 +18,7 @@ public class UIController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		UpdateLife(5, 5);
+        
 	}
 	
 	// Update is called once per frame
