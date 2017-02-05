@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class GameData {
@@ -16,8 +17,8 @@ public class GameData {
     public bool flipX;
 
     // Player progress variables:
-    public bool[] beaconLit = new bool[100];
-    public bool[] doorOpen = new bool[100];
-    public bool[] bossDefeated = new bool[100];
-    public bool[] plotSwitch = new bool[100];
+    public IDictionary<string, bool> beaconLit = new Dictionary<string, bool>();
+    public IDictionary<string, bool> doorOpen = new Dictionary<string, bool>();
+    public IDictionary<string, bool> bossDefeated = new Dictionary<string, bool>();
+    public IDictionary<string, bool> plotSwitch = new Dictionary<string, bool>();
 }

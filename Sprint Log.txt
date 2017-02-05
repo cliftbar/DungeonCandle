@@ -13,9 +13,23 @@ FEATURES:
     - Load submenu to pick load slot
     - Save submenu to pick save slot
 - Beacon doors
+- Conveyor platforms
+- Wall shackels decoration
+
+ART:
+- Decrepit stone texture
+- Mossy stone texture
+- Stone pillar base
+- Railings
+- Carpet
+- Tapestry
+- Background candlesticks
+- Background wall torch
+- Icy ground (for cave area)
+- Bridge
 
 IMPROVEMENTS:
-- Custom death animations; example: ooze straightens and then splooshes down, or is blown to bits by fire attack
+- Custom death animations
 - Smoke effect for torches?
 - Player death animation using pause feature
 
@@ -25,19 +39,24 @@ BUGS:
 
 
 Week 1/30/2017
-- Make saved bool arrays dictionaries instead
-- "Pauseable" game component
-    - Pauses and unpauses animation
-    - Saves movement information and sets movement = 0; reloads this info on unpause
-- Add a pause feature to the "Scene Controller"
-    - Pauseable game component checkes the Scene Controller to see if the game is paused
-- Dialogue
-    - Uses pause system
-    - Text appears character by character at some rate
-- Beacon torch special animation
-    - Game pauses except beacon torch, which executes special animation
-    - Camera zooms on beacon torch
-- NPC Dialogue
+X Make saved bool arrays dictionaries instead
+X "Pauseable" game component
+    X Pauses and unpauses animation
+    X Saves movement information and sets movement = 0; reloads this info on unpause
+X Add a pause feature to the "Scene Controller"
+    X Pauseable game component checkes the Scene Controller to see if the game is paused
+X Dialogue
+    X Uses pause system
+    X Text appears character by character at some rate
+X Camera focus behavior
+    X When enabled camera stops locking on player and slowly moves to zoom on some target
+X Beacon torch special animation
+    X Game pauses except beacon torch, which executes special animation
+    X Camera zooms on beacon torch
+X NPC Dialogue Collider
+    X Camera focuses on speaking character
+X Start network diagram of level design
+X Shackelled enemy (for dungeon area)
 
 Week 1/23/2017
 X Fix bat death fading animation to work with smoke-puff death animation

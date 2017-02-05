@@ -4,6 +4,7 @@ using System.Collections;
 public class SimpleFlyer : MonoBehaviour {
     private Rigidbody rb;
     private Vitality vt;
+    private Pauser pa;
     private SpriteRenderer sr;
     private PlayerController pc;
 
@@ -17,6 +18,7 @@ public class SimpleFlyer : MonoBehaviour {
     void Awake () {
         rb = GetComponent<Rigidbody>();
         vt = GetComponent<Vitality>();
+        pa = GetComponent<Pauser>();
         sr = GetComponentInChildren<SpriteRenderer>();
         pc = GameObject.Find("Player").GetComponent<PlayerController>();
     }
@@ -26,18 +28,20 @@ public class SimpleFlyer : MonoBehaviour {
     }
 
     void FixedUpdate () {
-        transform.position = new Vector3 (transform.position.x, transform.position.y, z);
-        if (vt.currentLife == 0) {
-            rb.velocity = new Vector3(0f, 0f, 0f);
-        } else if (triggered == true) {
-            rb.velocity = new Vector3(speed * direction, 0f, 0f);
-        } else if (Vector3.Distance(pc.transform.position, transform.position) <= aggroRadius) {
-            triggered = true;
-            if (pc.transform.position.x <= transform.position.x) {
-                direction = -1f;
-            } else {
-                TurnAround();
-                direction = 1f;
+        if (pa.Paused() == false) {
+            transform.position = new Vector3 (transform.position.x, transform.position.y, z);
+            if (vt.currentLife == 0) {
+                rb.velocity = new Vector3(0f, 0f, 0f);
+            } else if (triggered == true) {
+                rb.velocity = new Vector3(speed * direction, 0f, 0f);
+            } else if (Vector3.Distance(pc.transform.position, transform.position) <= aggroRadius) {
+                triggered = true;
+                if (pc.transform.position.x <= transform.position.x) {
+                    direction = -1f;
+                } else {
+                    TurnAround();
+                    direction = 1f;
+                }
             }
         }
     }

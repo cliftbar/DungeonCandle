@@ -18,6 +18,9 @@ public class SceneController : MonoBehaviour {
     public string testLoadScene;
     public Vector3 testLoadStartPosition;
 
+    // Pausing variables:
+    public bool paused;
+
     void Awake () {
         DontDestroyOnLoad(transform.gameObject);
         savedData = new GameData[saveCount];
@@ -29,6 +32,10 @@ public class SceneController : MonoBehaviour {
         if (testLoadScene != "") {
             StartCoroutine(LoadScene(testLoadScene, testLoadStartPosition, new Vector3(0f, 0f, 0f), false));
         }
+    }
+
+    void Update () {
+
     }
 
     // ------------------------------- //
@@ -76,7 +83,7 @@ public class SceneController : MonoBehaviour {
         if (currentData.slot >= 0) {
             SaveGame(currentData.slot);
         }
-        Debug.Log(currentData.slot);
+        Debug.Log("Saved to " + Application.persistentDataPath + " in slot " + currentData.slot);
     }
 
     public void SaveGame (int slot) {
@@ -173,19 +180,29 @@ public class SceneController : MonoBehaviour {
         currentData.flipX = flipX;
     }
 
+    public bool InitializeBeacon (string beaconName) {
+        bool beaconValue;
+        if (currentData.beaconLit.TryGetValue(beaconName, out beaconValue)) {
+            return beaconValue;
+        } else {
+            currentData.beaconLit.Add(beaconName, false);
+            return false;
+        }
+    }
+
+    public void LightBeacon(string beaconName) {
+        if (currentData.beaconLit[beaconName] == true) {
+            throw new System.ArgumentException("Beacon for that beaconId was already lit. There may be more than 1 beacon assigned to the same ID.", "beaconId");
+        } else {
+            currentData.beaconLit[beaconName] = true;
+        }
+    }
+
     // ----------------- //
     // CHECKING PROGRESS //
     // ----------------- //
 
-    public bool BeaconLit(int beaconId) {
-        return currentData.beaconLit[beaconId];
-    }
-
-    public void LightBeacon(int beaconId) {
-        if (currentData.beaconLit[beaconId] == true) {
-            throw new System.ArgumentException("Beacon for that beaconId was already lit. There may be more than 1 beacon assigned to the same ID.", "beaconId");
-        } else {
-            currentData.beaconLit[beaconId] = true;
-        }
+    public bool BeaconLit(string beaconName) {
+        return currentData.beaconLit[beaconName];
     }
 }
