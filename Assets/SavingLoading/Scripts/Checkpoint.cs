@@ -33,7 +33,7 @@ public class Checkpoint : MonoBehaviour {
 
             sc.SavePosition(SceneManager.GetActiveScene().name, position, directionalVelocity, flipX);
 
-            if (saveToDisk == true && sc.CurrentSaveSlot() >= 0) {
+            if (saveToDisk == true) {
                 sc.SaveCurrentGame();
             }
         }

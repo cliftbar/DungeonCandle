@@ -7,6 +7,7 @@ public class SimplerWalker : MonoBehaviour {
     private TerrainDetector cd;
     private TerrainDetector wd;
     private Vitality vt;
+    private Pauser pa;
 
     public bool startTurned;
     public float speed;
@@ -15,6 +16,7 @@ public class SimplerWalker : MonoBehaviour {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody>();
         vt = GetComponent<Vitality>();
+        pa = GetComponent<Pauser>();
 
         foreach (Transform child in transform) {
             if (child.gameObject.name == "Cliff Detector") {
@@ -39,13 +41,15 @@ public class SimplerWalker : MonoBehaviour {
     }
 
     void FixedUpdate () {
-        if (vt.currentLife > 0) {
-            SetSpeed();
-            if (wd.Detected() == true || cd.Detected() == false) {
-                TurnAround();
+        if (pa.Paused() == false) {
+            if (vt.currentLife > 0) {
+                SetSpeed();
+                if (wd.Detected() == true || cd.Detected() == false) {
+                    TurnAround();
+                }
+            } else {
+                rb.velocity = new Vector3(0f, 0f, 0f);
             }
-        } else {
-            rb.velocity = new Vector3(0f, 0f, 0f);
         }
     }
 

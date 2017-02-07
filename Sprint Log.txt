@@ -3,35 +3,64 @@ http://www.gamasutra.com/blogs/GarretBright/20140422/215978/Build_a_Bad_Guy_Work
 
 FEATURES:
 - Stalker enemy (hides in light, slowly chases in dark)
-- System for pausing and displaying messages
-- NPCs with dialogue
 - Enemy Push Hitbox?
     - Hitbox that pushes other characters away
     - Separate hitboxes for player vs other enemies?
-- Load scene system
 - Teleport function
-- Dungeon assets
-    X Jail bars
-    - Door
-    - Wall torch
-    X Water
-    X Waterfall
+- Wall Torch decoration/light source
+- Switch operated door
 - Submenus for main menu
     - Load submenu to pick load slot
     - Save submenu to pick save slot
+- Beacon doors
+- Conveyor platforms
+- Wall shackels decoration
+
+ART:
+- Decrepit stone texture
+- Mossy stone texture
+- Stone pillar base
+- Railings
+- Carpet
+- Tapestry
+- Background candlesticks
+- Background wall torch
+- Icy ground (for cave area)
+- Bridge
 
 IMPROVEMENTS:
-- Custom death animations: ooze straightens and then splooshes down, or is blown to bits by fire attack
-- Fix bat death fading animation to work with smoke-puff death animation
+- Custom death animations
 - Smoke effect for torches?
-- Player blinks when invulnerable after getting hit
+- Player death animation using pause feature
 
 BUGS:
 - Enemy Hitbox knockback doesn't work along x axis
 - Candle only lights based on OnTriggerEnter, not OnTriggerStay
 
 
+Week 1/30/2017
+X Make saved bool arrays dictionaries instead
+X "Pauseable" game component
+    X Pauses and unpauses animation
+    X Saves movement information and sets movement = 0; reloads this info on unpause
+X Add a pause feature to the "Scene Controller"
+    X Pauseable game component checkes the Scene Controller to see if the game is paused
+X Dialogue
+    X Uses pause system
+    X Text appears character by character at some rate
+X Camera focus behavior
+    X When enabled camera stops locking on player and slowly moves to zoom on some target
+X Beacon torch special animation
+    X Game pauses except beacon torch, which executes special animation
+    X Camera zooms on beacon torch
+X NPC Dialogue Collider
+    X Camera focuses on speaking character
+X Start network diagram of level design
+X Shackelled enemy (for dungeon area)
+
 Week 1/23/2017
+X Fix bat death fading animation to work with smoke-puff death animation
+X Player blinks when invulnerable after getting hit
 X Data Persistent Class
     X Persists between scenes
     X Keeps track of player's starting position
@@ -42,14 +71,14 @@ X Data Persistent Class
 x Main Menu
     x New Game Option
     x Load Game Option
-- Beacons
-    - Uses data persistence object to know whether to start lit or not
-    - Once lit, updates the data persistence object
-- Death System
+X Beacons
+    X Uses data persistence object to know whether to start lit or not
+    X Once lit, updates the data persistence object
+    X Art that's better than normal torch
+X Death System
     X Uses start position from Data Persistence class to respawn player when he dies
-    - Some kind of death animation
-- Add FallingDeath script and prefab
-    - Freezes camera
+X Add FallingDeath script and prefab
+    X Freezes camera
 X Saver/Loader Object
     X Persists between scenes
     X Saves/loads data persistence object

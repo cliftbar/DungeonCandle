@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     private Animator anim;
     private UIController ui;
     private SceneController sc;
+    private Pauser pa;
 
     public GameObject flameAttack;
 
@@ -63,6 +64,7 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        pa = GetComponent<Pauser>();
         li = GetComponentInChildren<Light>();
         foreach (Transform child in transform) {
             if (child.GetComponent<SpriteRenderer>() != null) {
@@ -91,60 +93,63 @@ public class PlayerController : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        // IF PAUSED == FALSE:
-        if (flinching == false && attacking == false) {
-            GetInput();
-        } else {
-            moveInput = 0f;
-        }
+        if (pa.Paused() == false) {
+            if (flinching == false && attacking == false) {
+                GetInput();
+            } else {
+                moveInput = 0f;
+            }
 
-        UpdateAnimation();
+            UpdateAnimation();
+        }
     }
 
     void FixedUpdate () {
-        // Movement physics:
-        if (Mathf.Abs(moveInput) >= 0.2) {
-            Move();
-        } else if (gd.Detected() == true) {
-            ApplyFriction(friction);
-        }
-
-        // Jumping physics:
-        if (jumping == true) {
-            if (Time.time >= jumpTimestamp + jumpTime) {
-                StopJump();
-            } else {
-                ContinueJump();
+        if (pa.Paused() == false) {
+            // Movement physics:
+            if (Mathf.Abs(moveInput) >= 0.2) {
+                Move();
+            } else if (gd.Detected() == true) {
+                ApplyFriction(friction);
             }
-        }
 
-        //Attack processing:
-        if (Time.time >= attackTimestamp + flameDelay && attacking == true && flameTriggered == true) {
-            BreatheFlame();
-        }
-
-        if (Time.time >= attackTimestamp + attackTime && attacking == true) {
-            StopAttack();
-        }
-
-        if (Time.time >= attackTimestamp + coolDown && attackEnabled == false) {
-            EndCoolDown();
-        }
-
-        // Flinch processing:
-        if (flinching == true) {
-            if (Time.time > flinchTimestamp + flinchTime || (Time.time > flinchTimestamp + flinchTime / 2f && gd.Detected() == true)) {
-                StopFlinch();
+            // Jumping physics:
+            if (jumping == true) {
+                if (Time.time >= jumpTimestamp + jumpTime) {
+                    StopJump();
+                } else {
+                    ContinueJump();
+                }
             }
-        }
 
-        if (flinchInvuln == true && Time.time > flinchInvulnTimestamp + flinchInvulnTime) {
-            StopFlinchInvuln();
-        }
+            //Attack processing:
+            if (Time.time >= attackTimestamp + flameDelay && attacking == true && flameTriggered == true) {
+                BreatheFlame();
+            }
 
-        // Death processing:
-        if (dying == true && Time.time >= deathTimestamp + deathTime) {
-            FinishDeath();
+            if (Time.time >= attackTimestamp + attackTime && attacking == true) {
+                StopAttack();
+            }
+
+            if (Time.time >= attackTimestamp + coolDown && attackEnabled == false) {
+                EndCoolDown();
+            }
+
+            // Flinch processing:
+            if (flinching == true) {
+                if (Time.time > flinchTimestamp + flinchTime || (Time.time > flinchTimestamp + flinchTime / 2f && gd.Detected() == true)) {
+                    StopFlinch();
+                }
+            }
+
+            if (flinchInvuln == true && Time.time > flinchInvulnTimestamp + flinchInvulnTime) {
+                StopFlinchInvuln();
+            }
+
+            // Death processing:
+            if (dying == true && Time.time >= deathTimestamp + deathTime) {
+                FinishDeath();
+            }
         }
     }
 
@@ -340,7 +345,7 @@ public class PlayerController : MonoBehaviour {
             rb.velocity = new Vector3(0f, 0f, 0f);
 
             if (currentLife == 0) {
-                StartDeath();
+                StartDeath(false);
             } else {
                 StartFlinch(knockback);
             }
@@ -373,9 +378,10 @@ public class PlayerController : MonoBehaviour {
 
     void StopFlinchInvuln () {
         flinchInvuln = false;
+        anim.SetTrigger("endBlink");
     }
 
-    void StartDeath () {
+    public void StartDeath (bool fallingDeath) {
         deathTimestamp = Time.time;
         dying = true;
     }

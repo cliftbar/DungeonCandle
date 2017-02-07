@@ -19,7 +19,7 @@ public class CandleSnuffer : MonoBehaviour {
     }
 
     void OnTriggerEnter (Collider other) {
-        if (other.gameObject.name == "Candle Hitbox") {
+        if (other.gameObject.name == "Candle Flame Hitbox") {
             pc.PutCandleOut();
         }
     }
