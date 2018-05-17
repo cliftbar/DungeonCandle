@@ -84,8 +84,6 @@ public class ChasePlayer : MonoBehaviour {
     }
 
     private void CheckBounceForPlayer() {
-        //print("test2" + Math.Abs(PlayerDist).ToString());
-
         if (!IsBouncing && (Math.Abs(PlayerDist) <= BounceDistance)){
             IsBouncing = true;
             Bounce();
